@@ -26,7 +26,7 @@ class NPRScraper(BaseNewsScraper):
                 article_url = link["href"]
                 title = link.get_text(strip=True)
                 genre = item.get("data-genre", "News")
-                pub_date = datetime.utcnow().isoformat() + "Z"
+                pub_date = datetime.now().isoformat() + "Z"
                 if is_today(pub_date):
                     articles.append({
                         "article_url": article_url,

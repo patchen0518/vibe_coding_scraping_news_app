@@ -37,7 +37,7 @@ def run_news_ingestion() -> int:
             if exists:
                 continue
             # Save article JSON to cache
-            filename = f"{scraper.source_name.lower()}_{datetime.utcnow().strftime('%Y%m%d%H%M%S%f')}.json"
+            filename = f"{scraper.source_name.lower()}_{datetime.now().strftime('%Y%m%d%H%M%S%f')}.json"
             filepath = os.path.join(CACHE_DIR, filename)
             with open(filepath, "w") as f:
                 json.dump(article, f)
@@ -47,7 +47,7 @@ def run_news_ingestion() -> int:
                 title=article["title"],
                 source_name=article["source_name"],
                 publication_datetime=article["publication_datetime"],
-                scraped_datetime=datetime.utcnow().isoformat() + "Z",
+                scraped_datetime=datetime.now().isoformat() + "Z",
                 original_genre=article["original_genre"],
                 normalized_genre=article["normalized_genre"],
                 json_cache_filename=filename,

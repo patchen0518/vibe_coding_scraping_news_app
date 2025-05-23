@@ -28,7 +28,7 @@ class NBCScraper(BaseNewsScraper):
                     article_url = f"https://www.nbcnews.com{article_url}"
                 title = link.get_text(strip=True)
                 genre = item.get("data-vertical", "News")
-                pub_date = datetime.utcnow().isoformat() + "Z"
+                pub_date = datetime.now().isoformat() + "Z"
                 if is_today(pub_date):
                     articles.append({
                         "article_url": article_url,

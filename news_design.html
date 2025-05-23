@@ -95,6 +95,9 @@
                 </div>
               </button>
             </div>
+            <button id="refetch-btn" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f0f2f4] text-[#111418] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              Re-fetch
+            </button>
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgW_Nxry8mQDwR4gGFbC3YJe60A2xZGjrWAH4DUpMkO7a8RsbACrfZJdWAVNS0uivnkSVvhOn6xp3oYP1SjUNgmj3qMxJJyiT4QJJg3KmOY08xDCzqf-qO0Iyis9zkGTsufrSjdx8qTbWTph8nDqdB9YyqsQcVcxLnwaZbR86hjt9Aic2LKLE_Qw9bu4wWVf4brBaytiXXBsSq4XOe0idUWlIftbqgi_fcAc41VgRPtP8aSbuVdi4Af-TuUrD0Yx8-7sWluIHu9Hk");'
@@ -104,215 +107,71 @@
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col w-80">
             <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Categories</h2>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Top Stories</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">World</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Business</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Technology</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Sports</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Science</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Health</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Entertainment</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Politics</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">Opinion</p>
-              <div class="shrink-0">
-                <div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
+            <div id="category-list"></div>
           </div>
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <h2 class="text-[#111418] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Top Stories</h2>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#111418] text-base font-bold leading-tight">Tech Giant Unveils Revolutionary AI Assistant</p>
-                    <p class="text-[#637588] text-sm font-normal leading-normal">The new AI assistant promises to redefine personal productivity and digital interaction.</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Read More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBN6fIx5WXLQDxmWctdwPMiVKUabYxDQLGhsNn6xsRz75wAN8aG_42Wj3CrrCFdaaujc0c2GzkqtXupB2Wqizx36AArdgVt-45x8XvjKi0A5cK-L1h2-mPPYHAdGrK3uf7MRV7GR4isGQ12vOe33OnQsyHa7QJVKrKUJTMpCxsd95V80ekIUQTHtJHpAJ1Wo82k-qHcce6pH1TIY00WRD1RRMvfU4tq23teH9LLantnyHAipoyu1UxQFkkuV0P8Xyai90CSARS4tw4");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#111418] text-base font-bold leading-tight">Global Leaders Meet to Discuss Climate Change</p>
-                    <p class="text-[#637588] text-sm font-normal leading-normal">
-                      Representatives from over 100 nations convene to address pressing environmental issues and forge international agreements.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Read More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsAHkqdXYF9pQp-TjrtkmvY3uLfEmZTP-obvbjd4_25uz0W6RNk2JhPt3Bl0_O8Hj0dEvVHzWm4Nz-X9LpyhYSXCE0HXv6g4oUOHZgr7GncLa0KVFutewxQAQwKXBiNsGQoBWQRWS5Bxdl5i7sHzP5w4W8YhPcgXj2iGau6NmgX2XGVic1XQv2fHxjAUsWaLExQ5f4cNmE25TShIbroDlYBFihzDn4XSC5M7YmPJ4uDaTPeQFKYkPBohoFkyADUIiPrYIsdLg8nBE");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#111418] text-base font-bold leading-tight">Local Startup Secures Major Funding</p>
-                    <p class="text-[#637588] text-sm font-normal leading-normal">
-                      A promising local startup in the renewable energy sector has received significant investment to expand its operations.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Read More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMjZZCi8YgLX-_E8ar0Wb9zFXM3t850hchznOqtM3RqGBRIE7nt8td1z6PMVQ1ohfmLiJNT6lpBeYyaP_k7zzE3mrrw6gVYdHE-CGOlH-W7AKeT_arQDVBx3BQYBBVNIUqK08zO3qDRfun53a04C402M3abg4961rl8emqdbnlaiVnfKAZGi9tMp2rAI_eA9BpY2E4UO4BPLWxD5P7xu_c_rsXqY0QhvZz7cX3GfLg9YRdX2z3e9ChNt96TtTlRRaicW_3bL1sO3Q");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#111418] text-base font-bold leading-tight">New Study Reveals Health Benefits of Regular Exercise</p>
-                    <p class="text-[#637588] text-sm font-normal leading-normal">
-                      Research indicates that consistent physical activity can significantly reduce the risk of chronic diseases.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Read More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8d_PmcV9HrVjlEzumWBQnLWZjCVNy-UMm5vQ33DvzA306fgHHHgTH-ixf4jTOJWFcoD2fnFP0JADNKu_V9h81O-Q2KZHuvcFdv0Hl1qmlItg-mRNjQ3oIMVGM94i31bH4_p44wBbPKVsJEThRJ-J8i-0YKFmj7dLEdJz9dkXY0MRrWFWBD0f9iF9nrn4x_b6btAcLx7NQ0h_Oy57izYkBSVn6oDHlismr8n2NCyw-xjrZyMCReeeTlz1xPmcxrFu3zpbmmBamKJk");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#111418] text-base font-bold leading-tight">Arts Festival Draws Record Crowds</p>
-                    <p class="text-[#637588] text-sm font-normal leading-normal">
-                      The annual city arts festival attracted a record number of attendees, showcasing diverse artistic talents.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Read More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArZytu0Lk2PXo4139_hsQgbPqa9fsATH2aTDpkTwNQvKd0ArykH62Yz5w3Ykk8QpS_Fb3X_2G2M3ANj1F7eI9QZR6GgW0y8umUKiNWxA4PzwBzc-R-4UFW7AVQ81IWkCTZ4k6lCXbLS7vEwyoTTk6SfTwrhs64oMXSOwqbs1sxqVkC06UuiQ_VToMc5_UOCsftswTaf6zJm2s5qYEZZQYau6M1q3mYSe-aPXV2KFAFDRptgQa6luj7loUNH9CC7NaaXnMk7Mvmwkc");'
-                ></div>
-              </div>
-            </div>
+            <h2 id="main-category-title" class="text-[#111418] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Top Stories</h2>
+            <div id="news-list"></div>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      let newsData = {};
+      let currentCategory = null;
+      async function fetchNews() {
+        const res = await fetch('/news-by-category');
+        newsData = await res.json();
+        renderCategories();
+        // Default to first category
+        const firstCat = Object.keys(newsData)[0];
+        if (firstCat) selectCategory(firstCat);
+      }
+      function renderCategories() {
+        const catList = document.getElementById('category-list');
+        catList.innerHTML = '';
+        Object.keys(newsData).forEach(cat => {
+          const div = document.createElement('div');
+          div.className = 'flex items-center gap-4 bg-white px-4 min-h-14 justify-between cursor-pointer hover:bg-gray-100';
+          div.innerHTML = `<p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">${cat}</p><div class="shrink-0"><div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></div></div>`;
+          div.onclick = () => selectCategory(cat);
+          catList.appendChild(div);
+        });
+      }
+      function selectCategory(cat) {
+        currentCategory = cat;
+        document.getElementById('main-category-title').textContent = cat;
+        renderNewsList(cat);
+      }
+      function renderNewsList(cat) {
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '';
+        (newsData[cat] || []).forEach(article => {
+          const div = document.createElement('div');
+          div.className = 'p-4';
+          div.innerHTML = `
+            <div class="flex items-stretch justify-between gap-4 rounded-lg">
+              <div class="flex flex-[2_2_0px] flex-col gap-4">
+                <div class="flex flex-col gap-1">
+                  <p class="text-[#111418] text-base font-bold leading-tight">${article.title}</p>
+                  <p class="text-[#637588] text-sm font-normal leading-normal">Source: ${article.source} | ${article.publication_datetime}</p>
+                </div>
+                <a href="${article.url}" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"><span class="truncate">Read More</span></a>
+              </div>
+            </div>
+          `;
+          newsList.appendChild(div);
+        });
+      }
+      document.getElementById('refetch-btn').onclick = async function() {
+        this.disabled = true;
+        this.textContent = 'Re-fetching...';
+        await fetch('/refetch-news', {method: 'POST'});
+        await fetchNews();
+        this.disabled = false;
+        this.textContent = 'Re-fetch';
+      };
+      window.onload = fetchNews;
+    </script>
   </body>
 </html>

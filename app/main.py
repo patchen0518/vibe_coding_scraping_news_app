@@ -21,16 +21,6 @@ def startup_event():
     init_db()
     run_news_ingestion()
 
-@app.get("/")
-def root():
-    """
-    Root endpoint for health check.
-
-    Returns:
-        dict: Status message.
-    """
-    return {"status": "News Scraper API is running."}
-
 app.include_router(news_router)
 app.include_router(display_router)
 app.include_router(web_router)

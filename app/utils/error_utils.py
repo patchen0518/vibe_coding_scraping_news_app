@@ -17,4 +17,4 @@ def log_scraper_error(source: str, message: str) -> None:
     os.makedirs(ERROR_LOG_DIR, exist_ok=True)
     log_file = os.path.join(ERROR_LOG_DIR, f"{source.lower()}_errors.log")
     with open(log_file, "a") as f:
-        f.write(f"[{datetime.utcnow().isoformat()}Z] {message}\n")
+        f.write(f"[{datetime.now().isoformat()}Z] {message}\n")

@@ -32,7 +32,7 @@ class CNNScraper(BaseNewsScraper):
                 # CNN genre extraction is not always present; fallback to 'World'
                 genre = item.get("data-section-name", "World")
                 # Publication date extraction (CNN markup varies, so fallback to now)
-                pub_date = datetime.utcnow().isoformat() + "Z"
+                pub_date = datetime.now().isoformat() + "Z"
                 # Reason: CNN's homepage often lacks explicit pub date; fallback to now
                 if is_today(pub_date):
                     articles.append({

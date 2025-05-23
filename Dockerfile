@@ -1,5 +1,6 @@
 # Dockerfile for news scraping app
-FROM python:3.11-slim
+FROM python:alpine    
+# 3.13-slim
 
 WORKDIR /app
 

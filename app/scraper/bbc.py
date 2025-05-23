@@ -25,7 +25,7 @@ class BBCScraper(BaseNewsScraper):
                     article_url = f"https://www.bbc.com{article_url}"
                 title = item.get_text(strip=True)
                 genre = item.get("data-bbc-container", "News")
-                pub_date = datetime.utcnow().isoformat() + "Z"
+                pub_date = datetime.now().isoformat() + "Z"
                 if is_today(pub_date):
                     articles.append({
                         "article_url": article_url,
