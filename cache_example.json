@@ -1,0 +1,15 @@
+{
+  "url": "https_specific_article_url",
+  "title": "Article Title",
+  "source": "CNN",
+  "publication_datetime": "2025-05-23T10:00:00Z",
+  "scraped_datetime": "2025-05-23T10:05:00Z",
+  "original_genre": "US Politics",
+  "normalized_genre": "Politics",
+  "full_content": "The entire text content of the article...",
+  "author": "Author Name (if available)",
+  "images": [
+    {"url": "image_url_1", "caption": "caption_1"},
+    {"url": "image_url_2", "caption": "caption_2"}
+  ]
+}

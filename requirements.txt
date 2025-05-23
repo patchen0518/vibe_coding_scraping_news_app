@@ -1,0 +1,8 @@
+# requirements.txt for news scraping app
+fastapi
+uvicorn
+requests
+beautifulsoup4
+sqlalchemy
+python-dotenv
+pytest
