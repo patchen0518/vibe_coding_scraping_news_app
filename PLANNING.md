@@ -34,12 +34,12 @@ Building an app that scrap daily news from selected source and centralized it in
   - If a scraper fails due to website structure changes, the system will log the error (see Error Handling below) and cease scraping from that specific source for that run, preventing a full application crash.
 
 ### News Storage & Caching:
-  - Storage Path: `/Users/patrickchen/Developer/AI_agent/vibe_coding_scraping_news_app/.cache/` (The .cache folder will be created if it doesn't exist).
+  - Storage Path: `/Users/<useraccount>/Developer/AI_agent/vibe_coding_scraping_news_app/.cache/` (The .cache folder will be created if it doesn't exist).
   - Format: Scraped articles (including their full content) will be stored as individual JSON files within this directory. (Example file can refer to the *cache_example.json)
   - Deduplication: Existing articles will be identified using their unique `article_url`.
 
 ### Error Handling & Logging:
-  - Errors (especially scraping errors) will be logged to a file located at `/Users/patrickchen/Developer/AI_agent/vibe_coding_scraping_news_app/.error_log/` (The .error_log folder will also be created if it doesn't exist).
+  - Errors (especially scraping errors) will be logged to a file located at `/Users/<useraccount>/Developer/AI_agent/vibe_coding_scraping_news_app/.error_log/` (The .error_log folder will also be created if it doesn't exist).
   - For the "send error notification to the developer" requirement, for now, this will be met by writing detailed logs to this file. If you need more active notifications (e.g., email alerts)
 
 ### Application Scope: 
