@@ -6,18 +6,45 @@ from typing import Dict
 
 # Example genre mapping (expand as needed)
 GENRE_MAP: Dict[str, str] = {
-    "World News": "World",
-    "Global": "World",
-    "Politics": "Politics",
-    "US": "US",
+    # BBC News
+    "Home": "Top Stories",
+    "News": "Top Stories",
+    "World": "World",
+    "US & Canada": "World",
+    "UK": "World",
+    "Africa": "World",
+    "Asia": "World",
+    "Australia": "World",
+    "Europe": "World",
+    "Latin America": "World",
+    "Middle East": "World",
     "Business": "Business",
-    "Health": "Health",
+    "Technology": "Technology",
+    "Sport": "Sports",
     "Science": "Science",
-    "Technology": "Tech",
-    "Tech": "Tech",
+    "Health": "Science",
+    "Climate": "Science",
+    "Environment & Nature": "Science",
+    # CNN
+    "Main page headlines": "Top Stories",
+    "US": "Top Stories",
+    "Tech": "Technology",
+    # NPR News
+    "Main news page headlines": "Top Stories",
+    "Technology": "Technology",
     "Sports": "Sports",
-    "Entertainment": "Entertainment",
-    # Add more as needed
+    # NBC News
+    "Main page headlines": "Top Stories",
+    "U.S. News": "Top Stories",
+    "Tech & Media": "Technology",
+    "Sports": "Sports",
+    # General
+    "Top Stories": "Top Stories",
+    "World": "World",
+    "Business": "Business",
+    "Technology": "Technology",
+    "Sports": "Sports",
+    "Science": "Science",
 }
 
 def normalize_genre(original_genre: str) -> str:

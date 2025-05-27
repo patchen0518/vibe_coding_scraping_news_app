@@ -15,15 +15,30 @@ class BBCScraper(BaseNewsScraper):
 
     def fetch_articles(self) -> List[Dict[str, Any]]:
         articles = []
+        seen_urls = set()
         try:
             resp = requests.get(self.BASE_URL, timeout=10)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
-            for item in soup.select("a.gs-c-promo-heading"):
+
+            css_selectors = 'a[data-testid="external-anchor"], a[data-testid="internal-link"]'
+            for item in soup.select(css_selectors):
                 article_url = item["href"]
                 if not article_url.startswith("http"):
                     article_url = f"https://www.bbc.com{article_url}"
-                title = item.get_text(strip=True)
+                if article_url in seen_urls:
+                    continue  # Skip duplicate URLs
+                seen_urls.add(article_url)
+                # Try to get the title from h1, h2, or h3 inside the link, fallback to link text
+                title_tag = None
+                for tag in ["h1", "h2", "h3"]:
+                    title_tag = item.find(tag, attrs={'data-testid': 'card-headline'})
+                    if title_tag and title_tag.get_text(strip=True):
+                        break
+                if title_tag:
+                    title = title_tag.get_text(strip=True)
+                else:
+                    title = item.get_text(strip=True)
                 genre = item.get("data-bbc-container", "News")
                 pub_date = datetime.now().isoformat() + "Z"
                 if is_today(pub_date):

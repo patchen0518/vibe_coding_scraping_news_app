@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>News Scraper</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -40,13 +40,8 @@
               </div>
               <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">NewsFeed</h2>
             </div>
-            <div class="flex items-center gap-9">
-              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Top Stories</a>
-              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">World</a>
-              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Business</a>
-              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Technology</a>
-              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Sports</a>
-              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Science</a>
+            <div class="flex items-center gap-9" id="nav-categories">
+              <!-- Dynamic category links will be inserted here by JS -->
             </div>
           </div>
           <div class="flex flex-1 justify-end gap-8">
@@ -100,16 +95,19 @@
             </button>
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgW_Nxry8mQDwR4gGFbC3YJe60A2xZGjrWAH4DUpMkO7a8RsbACrfZJdWAVNS0uivnkSVvhOn6xp3oYP1SjUNgmj3qMxJJyiT4QJJg3KmOY08xDCzqf-qO0Iyis9zkGTsufrSjdx8qTbWTph8nDqdB9YyqsQcVcxLnwaZbR86hjt9Aic2LKLE_Qw9bu4wWVf4brBaytiXXBsSq4XOe0idUWlIftbqgi_fcAc41VgRPtP8aSbuVdi4Af-TuUrD0Yx8-7sWluIHu9Hk");'
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgW_N");'
             ></div>
           </div>
         </header>
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col w-80">
-            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Categories</h2>
-            <div id="category-list"></div>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Sources</h2>
+            <div id="source-list"></div>
           </div>
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex items-center gap-9 mb-2" id="nav-categories">
+              <!-- Dynamic category links will be inserted here by JS -->
+            </div>
             <h2 id="main-category-title" class="text-[#111418] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Top Stories</h2>
             <div id="news-list"></div>
           </div>
@@ -117,61 +115,110 @@
       </div>
     </div>
     <script>
-      let newsData = {};
-      let currentCategory = null;
-      async function fetchNews() {
-        const res = await fetch('/news-by-category');
-        newsData = await res.json();
-        renderCategories();
-        // Default to first category
-        const firstCat = Object.keys(newsData)[0];
-        if (firstCat) selectCategory(firstCat);
-      }
-      function renderCategories() {
-        const catList = document.getElementById('category-list');
-        catList.innerHTML = '';
-        Object.keys(newsData).forEach(cat => {
-          const div = document.createElement('div');
-          div.className = 'flex items-center gap-4 bg-white px-4 min-h-14 justify-between cursor-pointer hover:bg-gray-100';
-          div.innerHTML = `<p class="text-[#111418] text-base font-normal leading-normal flex-1 truncate">${cat}</p><div class="shrink-0"><div class="text-[#111418] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></div></div>`;
-          div.onclick = () => selectCategory(cat);
-          catList.appendChild(div);
-        });
-      }
-      function selectCategory(cat) {
-        currentCategory = cat;
-        document.getElementById('main-category-title').textContent = cat;
-        renderNewsList(cat);
-      }
-      function renderNewsList(cat) {
-        const newsList = document.getElementById('news-list');
-        newsList.innerHTML = '';
-        (newsData[cat] || []).forEach(article => {
-          const div = document.createElement('div');
-          div.className = 'p-4';
-          div.innerHTML = `
-            <div class="flex items-stretch justify-between gap-4 rounded-lg">
-              <div class="flex flex-[2_2_0px] flex-col gap-4">
-                <div class="flex flex-col gap-1">
-                  <p class="text-[#111418] text-base font-bold leading-tight">${article.title}</p>
-                  <p class="text-[#637588] text-sm font-normal leading-normal">Source: ${article.source} | ${article.publication_datetime}</p>
-                </div>
-                <a href="${article.url}" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"><span class="truncate">Read More</span></a>
-              </div>
-            </div>
-          `;
-          newsList.appendChild(div);
-        });
-      }
-      document.getElementById('refetch-btn').onclick = async function() {
-        this.disabled = true;
-        this.textContent = 'Re-fetching...';
-        await fetch('/refetch-news', {method: 'POST'});
-        await fetchNews();
-        this.disabled = false;
-        this.textContent = 'Re-fetch';
-      };
-      window.onload = fetchNews;
+const SOURCES = [
+  { key: 'BBC News', label: 'BBC News' },
+  { key: 'CNN', label: 'CNN News' },
+  { key: 'NBC News', label: 'NBC News' },
+  { key: 'NPR News', label: 'NPR News' }
+];
+const CATEGORIES = [
+  'Top Stories', 'World', 'Business', 'Technology', 'Sports', 'Science'
+];
+let newsData = {};
+let currentSource = SOURCES[0].key;
+let currentCategory = CATEGORIES[0];
+
+async function fetchNews() {
+  const res = await fetch('/news-by-category');
+  newsData = await res.json();
+  renderSources();
+  renderNavCategories();
+  renderNewsList();
+}
+
+function renderSources() {
+  const sourceList = document.getElementById('source-list');
+  sourceList.innerHTML = '';
+  SOURCES.forEach(src => {
+    const div = document.createElement('div');
+    div.className = 'flex items-center gap-4 bg-white px-4 min-h-14 justify-between cursor-pointer hover:bg-gray-100' + (currentSource === src.key ? ' font-bold text-blue-600' : '');
+    div.innerHTML = `<p class="text-[#111418] text-base leading-normal flex-1 truncate">${src.label}</p>`;
+    div.onclick = () => {
+      currentSource = src.key;
+      renderSources();
+      renderNewsList();
+      updateMainTitle();
+    };
+    sourceList.appendChild(div);
+  });
+}
+
+function renderNavCategories() {
+  const nav = document.getElementById('nav-categories');
+  nav.innerHTML = '';
+  CATEGORIES.forEach(cat => {
+    const a = document.createElement('a');
+    a.className = 'text-[#111418] text-sm font-medium leading-normal' + (currentCategory === cat ? ' font-bold underline' : '');
+    a.href = '#';
+    a.textContent = cat;
+    a.onclick = (e) => {
+      e.preventDefault();
+      currentCategory = cat;
+      renderNavCategories();
+      renderNewsList();
+      updateMainTitle();
+    };
+    nav.appendChild(a);
+  });
+}
+
+function updateMainTitle() {
+  document.getElementById('main-category-title').textContent = `${currentCategory} - ${currentSource}`;
+}
+
+function renderNewsList() {
+  const newsList = document.getElementById('news-list');
+  newsList.innerHTML = '';
+  // Filter news by current source and category (normalize for robust matching)
+  const articles = (newsData[currentCategory] || []).filter(article => {
+    // Normalize both source keys and article.source for robust comparison
+    const normalizedSource = currentSource.trim().toLowerCase();
+    const articleSource = (article.source || '').trim().toLowerCase();
+    return normalizedSource === articleSource;
+  });
+  if (articles.length === 0) {
+    newsList.innerHTML = '<div class="p-4 text-gray-500">No news found for this source and category.</div>';
+    return;
+  }
+  articles.forEach(article => {
+    const div = document.createElement('div');
+    div.className = 'p-4';
+    div.innerHTML = `
+      <div class="flex items-stretch justify-between gap-4 rounded-lg">
+        <div class="flex flex-[2_2_0px] flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <p class="text-[#111418] text-base font-bold leading-tight">${article.title}</p>
+            <p class="text-[#637588] text-sm font-normal leading-normal">Source: ${article.source} | ${article.publication_datetime}</p>
+          </div>
+          <a href="${article.url}" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"><span class="truncate">Read More</span></a>
+        </div>
+      </div>
+    `;
+    newsList.appendChild(div);
+  });
+}
+
+document.getElementById('refetch-btn').onclick = async function() {
+  this.disabled = true;
+  this.textContent = 'Re-fetching...';
+  await fetch('/refetch-news', {method: 'POST'});
+  await fetchNews();
+  this.disabled = false;
+  this.textContent = 'Re-fetch';
+};
+window.onload = () => {
+  fetchNews().then(updateMainTitle);
+};
     </script>
   </body>
 </html>

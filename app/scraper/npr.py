@@ -15,16 +15,25 @@ class NPRScraper(BaseNewsScraper):
 
     def fetch_articles(self) -> List[Dict[str, Any]]:
         articles = []
+        seen_urls = set()
         try:
             resp = requests.get(self.BASE_URL, timeout=10)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
-            for item in soup.select("article"):  # NPR uses <article> tags
+
+            css_selectors = 'a'
+            for item in soup.select(css_selectors):  # NPR uses <article> tags
                 link = item.find("a", href=True)
                 if not link:
                     continue
                 article_url = link["href"]
+                if article_url in seen_urls:
+                    continue  # Skip duplicate URLs
+                seen_urls.add(article_url)
+
+                # Try to get the title from 'a'
                 title = link.get_text(strip=True)
+
                 genre = item.get("data-genre", "News")
                 pub_date = datetime.now().isoformat() + "Z"
                 if is_today(pub_date):

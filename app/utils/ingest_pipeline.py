@@ -32,6 +32,9 @@ def run_news_ingestion() -> int:
         for article in articles:
             if not is_today(article["publication_datetime"]):
                 continue
+            # Skip articles with empty or missing title
+            if not article.get("title") or not article["title"].strip():
+                continue
             # Deduplication by article_url
             exists = session.query(NewsArticle).filter_by(article_url=article["article_url"]).first()
             if exists:
