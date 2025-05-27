@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News Scraper</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Newsreader:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Newsreader, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#111418]">
+              <div class="size-4">
+                <!-- logo svg -->
+              </div>
+              <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">NewsFeed</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              {% for cat in categories %}
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/category/{{ cat }}">{{ cat }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        </header>
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

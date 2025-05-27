@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 mx-auto">
+  <h2 class="text-[#111418] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">{{ category }}</h2>
+  <div id="news-list">
+    {% for article in articles %}
+    <div class="p-4">
+      <div class="flex items-stretch justify-between gap-4 rounded-lg">
+        <div class="flex flex-[2_2_0px] flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <p class="text-[#111418] text-base font-bold leading-tight">{{ article.title }}</p>
+            <p class="text-[#637588] text-sm font-normal leading-normal">Source: {{ article.source_name }} | {{ article.publication_datetime }}</p>
+          </div>
+          <a href="{{ article.article_url }}" target="_blank" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal w-fit"><span class="truncate">Read More</span></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
